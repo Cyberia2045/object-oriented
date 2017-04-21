@@ -1,57 +1,31 @@
-// var craving; // variable declaration
-// var food = getFood(); // the food variable now equals the returned value of the getFood() function.
+var shorePhotos = [];
+var hikingPhotos = [];
 
-// function getFood() {
-// 	if(craving === "sweet") {
-// 		stringReturned = "Get some ice cream!"
-// 	}
-// 	if(craving === "savory") {
-// 		stringReturned = "Get some tempeh bacon"
-// 	}
-// 	else {
-// 		stringReturned = "I'm not hungry"
-// 	}
+function createPhoto(albumName, fileName) {
+	albumName.push(fileName);
+} // This function creates an instance of photo. It takes two arguments (albumName, fileName).  After the instance is created, it is then pushed to an array of photos which is stored as a value in an album variable.
 
-// 	return stringReturned;
-// 	// stringreturned if being set depending on the value returned in setCraving().  The if/else statement is run and stringReturned is to the definition of the if/else statement that returns true.  Then we can return the valse set after we find out which statement is true.  This is done in lieu of returning the value from each block in the if/else statement.
-// }
+createPhoto(shorePhotos, "waves.jpg");
+createPhoto(shorePhotos, "boardwalk.jpg");
+createPhoto(shorePhotos, "downtown.jpg");
 
-// function setCraving() {
-// 	craving = "sweet" // This reassigns the value of var craving and gives it the value returned from the setCraving() function.  This does not define a new variable, it reassigns the value of an already existing variable.
-// }
+createPhoto(hikingPhotos, "colorado.jpg");
+createPhoto(hikingPhotos, "wyoming.jpg");
+createPhoto(hikingPhotos, "newMexico.jpg");
+// This is calling the createPhotos function and passing a fileName as an argument.  This now creates photos.  Then, the function pushes these newly created photos back up to the photos array where they are held until we call upon them somewhere else in the program. var photos then equals an array with these three photos held as values.
 
-// var photos = [];
+function albumList(gallery) {
+	console.log(gallery);
+	for (var i=0; i < gallery.length; i++) {
+		console.log("Photo " + i + ": " + gallery[i]);
+	}
+}
 
-// 	function createPhoto(fileName) {
-// 		photos.push(fileName);
-// 	}
+// createAlbum(gallery); // createImgTag is holding an array of four values.
 
-// 	createPhoto("waves.jpg"); // preferred functional method
-// 	createPhoto("boardwalk.jpg");
+// This for loop is running through the array of photos.  gallery[i] is an instance of photo that is stored in an array at a particular index.  This loop is pulling out the values held in the photos array and logging them to the console through the i variable.
 
-// 	function createImgTag(gallery) {	
-// 		for(var i=0; i < gallery.length; i++) {
-// 			console.log("The current index is " + i + "." + " The current photo is " + gallery[i] + ".")	
-// 		}
-// 	}
 
-// createImgTag(photos);
-
-var mountainPhotos = [];
-var weddingPhotos = [];
-var travelPhotos = [];
-
-createPhoto(mountainPhotos, "hiking.jpg");
-createPhoto(mountainPhotos, "glacier.jpg");
-createPhoto(mountainPhotos, "vista.jpg");
-
-createPhoto(weddingPhotos, "peaks.jpg");
-createPhoto(weddingPhotos, "peaks.jpg");
-createPhoto(weddingPhotos, "peaks.jpg");
-
-createPhoto(travelPhotos, "peaks.jpg");
-createPhoto(travelPhotos, "peaks.jpg");
-createPhoto(travelPhotos, "peaks.jpg");
 
 
 
