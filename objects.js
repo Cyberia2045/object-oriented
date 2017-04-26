@@ -97,16 +97,6 @@ function teacherList(teacherArray) {
 	}
 }
 
-function inState() {
-	for(var i=0; i < studentArray.length)
-	if (this.student.location === university.location) {
-		this.student.tuition = (this.student.tuition)/2
-	}
-	else {
-		console.log("Full Price")
-	}
-		console.log(this.student.tuition)
-}
 
 
 
