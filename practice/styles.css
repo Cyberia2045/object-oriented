@@ -1,0 +1,11 @@
+body {
+	background-color: teal;
+	font-family: "Futura";
+}
+
+.choice {
+	width: 300px;
+	height:300px;
+	background-color: forestgreen;
+	border: 3px solid white;
+}
