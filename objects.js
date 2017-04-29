@@ -54,17 +54,20 @@ function Person(fName, lName, location, age) {
 	this.age = age;
 }
 
-function University(name, location, tuition) {
+function University(name) {
 	this.name = name;
-	this.location = location;
-	this.tuition = tuition;
+	this.students = [];
+	this.teachers = [];
+	this.addStudent = addStudent;
+	this.addTeacher = addTeacher;
+	this.studentList = studentList;
+	this.teacherList = teacherList;
 }
 
 function Student(fName, lName, neighborhood, age, university, subject) {
 	Person.apply(this, arguments);
 	this.university = university;
 	this.subject = subject;
-	this.inState = inState;
 }
 
 function Teacher() {
@@ -77,28 +80,32 @@ var mateo = new Student("Matthew", "MacDermant", "Pennsylvania", "30", "Wagner",
 var amanda = new Student("Amanda", "Michael", "Pennsylvania", "30", "Villanova", "Psychology");
 
 // teachers
-var phillip = new Teacher("Phillip", "Wentworth", "Pennsylvania", "35", "Penn", "Classics");
-var sameer = new Teacher("Sameer", "Saxena", "Pennsylvania", "27", "Penn", "Botony");
+var phillip = new Teacher("Phillip", "Wentworth", "Pennsylvania", "35", "Wagner", "Classics");
+var sameer = new Teacher("Sameer", "Saxena", "Pennsylvania", "27", "Villanova", "Botony");
 
 // universities
-var wagner = new University("Wagner", "New York", 40000);
-var villanova = new University("Villanova", "Pennsylvania", 35000);
-var penn = new University("Penn", "Pennsylvania", 40000);
+var wagner = new University("Wagner");
+var villanova = new University("Villanova");
 
-function studentList(studentArray) {
-	for (var i=0; i < studentArray.length; i++) {
-		console.log(studentArray[i].fName + " " + studentArray[i].lName + " is a " + studentArray[i].age + " year old student of " + studentArray[i].subject + " at " + studentArray[i].university + ".")
+function studentList() {
+	for (var i=0; i < this.students.length; i++) {
+		console.log(this.students[i].fName + " " + this.students[i].lName)
 	}
 }
 
-function teacherList(teacherArray) {
-	for(var i=0; i < teacherArray.length; i++) {
-		console.log(teacherArray[i].fName + " " + teacherArray[i].lName + " is a professor of " + teacherArray[i].subject + " at " + teacherArray[i].university + ".")
+function teacherList() {
+	for(var i=0; i < this.teachers.length; i++) {
+		console.log(this.teachers[i].fName + " " + this.teachers[i].lName + " is a professor of " + this.teachers[i].subject + " at " + this.teachers[i].university + ".")
 	}
 }
 
+function addStudent(student) {
+	this.students.push(student);
+}
 
-
+function addTeacher(teacher) {
+	this.teachers.push(teacher);
+}
 
 
 
